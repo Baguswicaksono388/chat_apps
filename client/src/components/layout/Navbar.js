@@ -14,7 +14,7 @@ const Navbar = () => {
             </ul>
             </div>
         </nav>
-        <ul class="sidenav" id="mobile-demo">
+        <ul className="sidenav" id="mobile-demo">
             <li><a href="sass.html">Login</a></li>
             <li><a href="badges.html">Signup</a></li>
             <li><a href="collapsible.html">Logout</a></li>
