@@ -3,7 +3,11 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const socketio = require('socket.io');
-const io = socketio(server);
+const io = socketio(server, {
+  cors: {
+    origin: '*',
+  }
+});
 const PORT = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
@@ -11,7 +15,12 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log("connected");
+  socket.on("ping", function (inData) {
+    console.log("ping received");
+    socket.emit("pong", { });
+  });
+  socket.emit("connected",);
 });
 
 server.listen(PORT, () => {
