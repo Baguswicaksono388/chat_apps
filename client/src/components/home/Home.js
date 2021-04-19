@@ -22,10 +22,10 @@ const Home = () => {
         setRoom('');
     }
 
-    const SetRoomOnChange = (data) =>{
-        console.log(data);
-        // /setRoom(data);
-    }
+    // const SetRoomOnChange = (data) =>{
+    //     console.log(data);
+    //     // /setRoom(data);
+    // }
 
     const rooms =[
         {
@@ -65,8 +65,8 @@ const Home = () => {
                                     <div className="input-field col s12">
                                         <input placeholder="Enter a room name" id="room" type="text" className="validate" 
                                         value={room}
-                                        onChange={(e) => SetRoomOnChange(e.target.value)}
-//                                        onChange={e=>setRoom(e.target.value)}
+                                        // onChange={(e) => SetRoomOnChange(e.target.value)}
+                                        onChange={e=>setRoom(e.target.value)}
                                         />
                                         <label htmlFor="room">Room</label>
                                     </div>
