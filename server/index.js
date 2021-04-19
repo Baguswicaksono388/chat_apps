@@ -15,11 +15,15 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  console.log("connected");
-  socket.on("ping", function (inData) {
-    console.log("ping received");
-    socket.emit("pong", { });
+  console.log(socket.id);
+  socket.on('create-room', name=>{
+    console.log('Then room name received is ', name);
   });
+
+  // socket.on("ping", function (inData) {
+  //   console.log("ping received");
+  //   socket.emit("pong", { });
+  // });
   socket.emit("connected",);
 });
 
