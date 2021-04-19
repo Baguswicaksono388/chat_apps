@@ -9,7 +9,8 @@ const Home = () => {
     useEffect(() => {
         socket = io(ENDPT);
         return () => {
-            socket.emit('disconnect');
+            socket.emit("disconnect");
+            // console.log(socket.emit());
             socket.off();
         }
     }, [ENDPT])

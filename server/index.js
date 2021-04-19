@@ -20,10 +20,10 @@ io.on('connection', (socket) => {
     console.log('Then room name received is ', name);
   });
 
-  // socket.on("ping", function (inData) {
-  //   console.log("ping received");
-  //   socket.emit("pong", { });
-  // });
+  socket.on("ping", function (inData) {
+    console.log("ping received");
+    socket.emit("pong", { });
+  });
   socket.emit("connected",);
 });
 
